@@ -41,17 +41,3 @@ return (
 
 export default ItemCount;
 
-
-
-/*</div>const onDecrement = () => {
-}
-return (
-    <div>
-  <p>{count}</p>
-<button onClick={onAdd}>+</button>
-<button onClick={onDecrement}>-</button>
-<button onClick={handleAdd}>Agregar al carrito</button>
-
-  </div>
-)
-}*/
