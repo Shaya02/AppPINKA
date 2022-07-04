@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './containers/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer';
+/*import ItemListContainer from './containers/ItemListContainer';*/
 
 
 
@@ -10,7 +11,8 @@ return (
 <div className='container'>
      {}
   <NavBar/>
-  <ItemListContainer greeting= "PINKA"/>
+  {/*<ItemListContainer greeting= "PINKA>*/}
+  <ItemDetailContainer/>
     </div>
   );
 }

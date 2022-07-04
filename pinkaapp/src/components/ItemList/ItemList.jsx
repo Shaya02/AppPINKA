@@ -34,7 +34,7 @@ const ItemList = () => {
           <>
             {
            
-              products.map((product) => {
+             products.map((productos) => {
                
                 return (
                   <div key={productos.id}>
