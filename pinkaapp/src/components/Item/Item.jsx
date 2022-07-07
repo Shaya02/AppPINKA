@@ -1,15 +1,15 @@
 import React from 'react';
-import{ productos }from '../../data/data';
+import './item.css';
 
-const Item = ({ nombre, imagen, precio, stock }) => {
+const Item = ({ name, thumbnail, price, stock }) => {
         return (
         
            <div className="card">
-                <img src className="card-img-top" alt=""> ${productos.imagen}</img>
+                <img src ={thumbnail} className="card-img-top" alt=""/>
                 <div className="card-body">
-                    <h5 class="card-title">${productos.nombre}</h5>
-                    <p className="card-text">$ ${productos.precio}</p>
-                    <p className="card-text">Stock: ${productos.stock}</p>
+                    <h5 className="card-title">{name}</h5>
+                    <p className="card-text"> ${price}</p>
+                    <p className="card-text"> Stock:{stock}</p>
                 </div>
             </div>
         )

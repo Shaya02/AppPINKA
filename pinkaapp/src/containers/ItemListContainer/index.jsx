@@ -1,6 +1,7 @@
 import React from 'react';
 import ItemCount from '../../components/ItemCount';
-import ItemList from '../../components/ItemList/ItemList';
+import ItemList from '../../components/ItemList';
+
 
 
 const ItemListContainer = ({greeting}) => {

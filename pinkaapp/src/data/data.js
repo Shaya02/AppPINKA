@@ -21,6 +21,12 @@ export const productos = [
         stock : 3 ,
         imagen : "https://cdn.shopify.com/s/files/1/0273/4702/6033/products/driprosadoHB_530x@2x.jpg?v=1591306806"
     } ,
-
+    {
+        id : 4,
+        nombre : " Cookies " ,
+        precio : 950,
+        stock : 3 ,
+        imagen : "https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-1.jpg"
+    } ,
   
 ] ;
