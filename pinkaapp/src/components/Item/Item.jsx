@@ -12,6 +12,7 @@ const Item = ({ name, thumbnail, price, stock }) => {
                     <p className="card-text"> Stock:{stock}</p>
                 </div>
             </div>
+         
         )
     };
 
