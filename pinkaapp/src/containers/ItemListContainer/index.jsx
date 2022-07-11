@@ -1,19 +1,23 @@
 import React from 'react';
-import ItemCount from '../../components/ItemCount';
+import ButtonCount from '../../components/ButtonCount';
 import ItemList from '../../components/ItemList';
 
 
-
 const ItemListContainer = ({greeting}) => {
-    const onAdd = () => {
-        console.log("Se agrego al carrito")
+    const handleConfirm = (quantity) => {
+        console.log("Se agrego al carrito la cantidad de : " + quantity);
              
     }
+    
     return (
-       <div>
+        <div>
+       
+      
         <h2> {greeting}</h2>
-        <ItemCount onAdd={onAdd} inicial={1} stock ={5}/>
+      
         <ItemList/>
+        <ButtonCount onConfirm={handleConfirm} maxQuantity={10}/>
+      
        </div> 
     )
     }

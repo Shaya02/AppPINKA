@@ -1,27 +1,37 @@
-
-import React, {useState, useEffect} from 'react';
+import React, { useEffect, useState } from 'react'
 import ItemDetail from '../../components/ItemDetail';
+import {useParams} from 'react-router-dom';
 import { productos } from '../../data/data';
 
+const ItemDetailContainer = () => {
 
-const ItemDetailContainer= () => {
-    const [productDetail, setProductDetail] = useState ({})
-    useEffect(() => {
-        const lista=productos
-        const getProductos=async()=> {
-        try {
-            const response= await fetch (lista);
-            const data= await response.json();
-            setProductDetail(data)
-        } catch (error) {
-            console.log(error)
+    const [productosDetail, setProductosDetail] = useState({})
+
+    const params = useParams()
+
+    console.log(params);
+
+    useEffect(()=> {
+       const lista=productos
+        const getProductos = async () => {
+            try {
+                const response = await fetch(lista)
+                const data = await response.json();
+                setProductosDetail(data)
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
-    getProductos();
-      }, []);
+        getProductos();
 
-return (
-<ItemDetail product={productDetail}/>
-)
+    }, [params])
+
+    return (
+        Object.keys(productosDetail).length !== 0 ?
+        <ItemDetail product={productosDetail}/>
+        :
+        <p>Cargando...</p>
+    )
 }
+
 export default ItemDetailContainer

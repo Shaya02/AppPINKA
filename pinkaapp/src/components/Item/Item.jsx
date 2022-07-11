@@ -2,6 +2,7 @@ import React from 'react';
 import './item.css';
 
 const Item = ({ name, thumbnail, price, stock }) => {
+  
         return (
         
            <div className="card">
@@ -12,7 +13,7 @@ const Item = ({ name, thumbnail, price, stock }) => {
                     <p className="card-text"> Stock:{stock}</p>
                 </div>
             </div>
-         
+    
         )
     };
 
