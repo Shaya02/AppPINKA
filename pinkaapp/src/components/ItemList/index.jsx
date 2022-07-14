@@ -38,7 +38,7 @@ const ItemList = () => {
              products.map((productos) => {
                
                 return (
-                  <div key={productos.id}>
+                  <div key={productos.id} >
                     <Item
                       name={productos.nombre}
                       thumbnail={productos.imagen}

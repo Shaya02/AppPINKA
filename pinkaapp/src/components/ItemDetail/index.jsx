@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ButtonCount from '../ButtonCount';
+import { Shop } from '../../Context/ShopProvider';
 
 
-const ItemDetail = ({ product }) => {
+
+const ItemDetail = ({ productos}) => {
 
     const navigate = useNavigate();
 
-    product.stock = 10;
+    productos.stock = 5;
     const [qtyAdded, setQtyAdded] = useState(0);
+    
+    const {addItem}=useContext(Shop)
 
     const handleConfirm = (qty) => {
         setQtyAdded(qty);
     }
 
     const handleTerminate = () => {
+        addItem(productos, qtyAdded)
         navigate('/cart')
     }
 
@@ -22,13 +28,13 @@ const ItemDetail = ({ product }) => {
 
     return (
         <div className='container-detail'>
-            <h1>{product.title}</h1>
-            <img src={product.image} alt="product-detail" />
-            <p>{product.description}</p>
-            {!qtyAdded ?
-                <ButtonCount onConfirm={handleConfirm} maxQuantity={product.stock} />
+            <h1>{productos.nombre}</h1>
+            <img src={productos.imagen} alt="product"/>
+            <p>{productos.category}</p>
+            { !qtyAdded ?
+                <ButtonCount onConfirm={handleConfirm} maxQuantity={productos.stock} />
                 :
-                <button onClick={handleTerminate}>Finalizar compra</button>
+                <button onClick={handleTerminate}>Terminar compra</button>
             }
         </div>
     )

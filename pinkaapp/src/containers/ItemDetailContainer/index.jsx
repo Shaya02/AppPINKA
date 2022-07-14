@@ -5,19 +5,19 @@ import { productos } from '../../data/data';
 
 const ItemDetailContainer = () => {
 
-    const [productosDetail, setProductosDetail] = useState({})
+    const [productDetail, setProductDetail] = useState({})
 
     const params = useParams()
 
     console.log(params);
 
     useEffect(()=> {
-       const lista=productos
+       const lista=productos;
         const getProductos = async () => {
             try {
-                const response = await fetch(lista)
+                const response = await fetch (lista ` ${params.productosId}`)
                 const data = await response.json();
-                setProductosDetail(data)
+                setProductDetail(data)
             } catch (error) {
                 console.log(error)
             }
@@ -27,8 +27,8 @@ const ItemDetailContainer = () => {
     }, [params])
 
     return (
-        Object.keys(productosDetail).length !== 0 ?
-        <ItemDetail product={productosDetail}/>
+        Object.keys(productDetail).length !== 0 ?
+        <ItemDetail productos={productDetail}/>
         :
         <p>Cargando...</p>
     )
