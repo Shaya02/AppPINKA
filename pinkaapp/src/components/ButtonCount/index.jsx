@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const ButtonCount = ({ onConfirm, maxQuantity }) => {
 
 
-    const [value, setValue] = useState(1);
+    const [value, setValue] = useState(0);
 
     const handleConfirm = () => {
         if (value <= maxQuantity) {

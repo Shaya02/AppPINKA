@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import ItemDetail from '../../components/ItemDetail';
 import {useParams} from 'react-router-dom';
 import { productos } from '../../data/data';
+import ButtonCount from '../../components/ButtonCount';
 
 const ItemDetailContainer = () => {
 
-    const [productDetail, setProductDetail] = useState({})
+    const [productosDetail, setProductosDetail] = useState({})
 
     const params = useParams()
 
@@ -17,7 +18,7 @@ const ItemDetailContainer = () => {
             try {
                 const response = await fetch (lista ` ${params.productosId}`)
                 const data = await response.json();
-                setProductDetail(data)
+                setProductosDetail(data)
             } catch (error) {
                 console.log(error)
             }
@@ -27,10 +28,12 @@ const ItemDetailContainer = () => {
     }, [params])
 
     return (
-        Object.keys(productDetail).length !== 0 ?
-        <ItemDetail productos={productDetail}/>
+        Object.keys(productosDetail).length !== 0 ?
+        <ItemDetail productos={productosDetail}/>
+    
         :
         <p>Cargando...</p>
+        
     )
 }
 

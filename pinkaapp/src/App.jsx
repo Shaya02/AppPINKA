@@ -17,7 +17,7 @@ return (
         <Routes>
           <Route path='/' element={<ItemListContainer/>}></Route>
           <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
-          <Route path='/detail/:producostId' element={<ItemDetailContainer/>}></Route>
+          <Route path='/detail/:productosId' element={<ItemDetailContainer/>}></Route>
           <Route path='/cart' element={<Cart/>}></Route>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
