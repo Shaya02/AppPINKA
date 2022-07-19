@@ -3,16 +3,23 @@ import { Shop } from '../../Context/ShopProvider';
 
 
 
-const Cart = () => {
-  const {cart} = useContext(Shop);
 
-  console.log(cart);
-  return (
+
+const Cart = (addItem) => {
+  const {cart} = useContext(Shop);
+console.log(cart, addItem);
+  return ( 
+    <>
     <ul>
       {cart.map(productos => {
-        return <li key={productos.id}>{productos.nombre} <img src={productos.image} width='80px' alt={productos.nombre}/></li>
+        return <li key={productos.id}>
+         <h3> {productos.nombre} </h3>
+          <img src={productos.imagen} width='80px' alt={productos.nombre}/> 
+          </li>
       })}
     </ul>
+    </>
   )}
-
+  
 export default Cart 
+   
