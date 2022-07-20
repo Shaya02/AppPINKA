@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
 import ButtonCount from '../../components/ButtonCount';
-
+import{collection, query, getDocs} from "firebase/firestore";
+import { db } from '../../firebase/config';
 
 
 
@@ -16,13 +17,23 @@ const ItemListContainer = ({greeting}) => {
     console.log(params);
   
     useEffect(() => {
-      const lista=productos;
+      //const lista=productos;
       const getProductos = async () => {
         try {
-          const response = await fetch(lista);
-          const data = await response.json()
-          setProductos(data);
-          setProductosFiltrados(data);
+              const q= query(collection(db, "productos"));
+              const querySnapshot= await getDocs(q);
+              const products=[]
+              querySnapshot.forEach((doc)=>{
+               // console.log(doc.id, "=>", doc.data() );
+                products.push({id:doc.id, ...doc.data()})
+              });
+          console.log(products);
+
+
+      //  const response = await fetch(lista);
+        //  const data = await response.json()
+          setProductos(products);
+          setProductosFiltrados(products);
         } catch (error) {
           console.log("Hubo un error:");
           console.log(error);

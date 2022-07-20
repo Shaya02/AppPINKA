@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-const ButtonCount = ({ onConfirm, maxQuantity, id }) => {
+const ButtonCount = ({ onConfirm, maxQuantity, }) => {
 
 
     const [value, setValue] = useState(0);
- console.log("Se agrega al carrito", id);
+ console.log("Se agrega al carrito");
     const handleConfirm = () => {
         if (value <= maxQuantity) {
             onConfirm(value)
