@@ -1,23 +1,3 @@
-/*import React from 'react';
-import './item.css';
-
-const Item = ({ name, thumbnail, price, stock }) => {
-  
-        return (
-            
-            <div className="card">
-                 <img src ={thumbnail} className="card-img-top" alt=""/>
-                 <div className="card-body">
-                     <h5 className="card-title">{name}</h5>
-                     <p className="card-text"> ${price}</p>
-                     <p className="card-text"> Stock:{stock}</p>
-                 </div>
-             </div>
-     
-        );
-      }
-*/
-
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { productos } from '../../data/data';
@@ -27,7 +7,7 @@ const Item = ({ name }) => {
   const navigate = useNavigate();
 
   const handleDetail = ()=> {
-    console.log("Navega hacia el detail");
+    console.log("Navega hacia el detalle");
     navigate(`/detail/${productos.id}`)
   }
 

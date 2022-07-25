@@ -1,13 +1,26 @@
 import React, {useContext} from 'react'
 import { Shop } from '../../Context/ShopProvider';
+import ordenGenerada from '../../FuncionesUtilitarias/ordenGenerada';
+import guardarOrden from '../../FuncionesUtilitarias/ordenGenerada';
 
 
 
 
-
-const Cart = (addItem) => {
+const Cart = () => {
   const {cart} = useContext(Shop);
-console.log(cart, addItem);
+
+
+const confirmarOrden= async() =>{
+  const orden= ordenGenerada("Shaya", "Uruguay", cart,2500);
+  guardarOrden(cart, orden)
+
+
+
+//const docRef = await addDoc(collection(db, "orders"), orden);
+//console.log("Document written with ID: ", docRef.id);
+
+}
+
   return ( 
     <>
     <ul>
@@ -18,6 +31,7 @@ console.log(cart, addItem);
           </li>
       })}
     </ul>
+    <button onClick={confirmarOrden}> Confirmar compra </button>
     </>
   )}
   

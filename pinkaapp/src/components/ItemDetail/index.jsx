@@ -21,7 +21,7 @@ const ItemDetail = ({ productos}) => {
 
     const handleTerminate = () => {
         addItem(productos, qtyAdded)
-        navigate('/cart')
+        navigate(`/cart`)
     }
 
     console.log(qtyAdded);
